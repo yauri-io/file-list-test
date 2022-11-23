@@ -10,10 +10,10 @@
     </style>
 </head>
 <body>
-    <ul id="fileList"></ul>
+<ul id="fileList"></ul>
 <script>
     const baseURL = 'https://d1pdmtmq4qivpl.cloudfront.net/sample'
-    const extensions = ['.jpg','.doc','.docx','.xls','.xlsx','.ppt','.pdf']
+    const extensions = ['.jpg', '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pdf']
 
     function createFileURL(ext) {
         return `${baseURL}/sample${ext}`;
@@ -31,7 +31,7 @@
     }
 
 
-    extensions.forEach(function(ext) {
+    extensions.forEach(function (ext) {
         const fileURL = createFileURL(ext);
         createList(document.getElementById('fileList'), fileURL, ext)
     })

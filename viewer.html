@@ -30,7 +30,9 @@
     if (!fileURL) {
         throw Error('File URL is not valid!')
     }
-    const viewerURL = `https://docs.google.com/viewer?url=${fileURL}&embedded=true`
+    // const viewerURL = `https://docs.google.com/viewer?url=${fileURL}&embedded=true`
+    const viewerURL = `https://view.officeapps.live.com/op/view.aspx?src=${fileURL}&wdOrigin=BROWSELINK`
+
     viewer.src = viewerURL
 </script>
 </body>

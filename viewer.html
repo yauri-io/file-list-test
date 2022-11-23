@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Free Google Document Viewer</title>
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+    <style>
+        iframe {
+            display: block;
+            background: white;
+            border: none;
+            height: 97vh;
+            width: 97vw;
+        }
+    </style>
+<body>
+<center>
+    <iframe
+            id="viewer"
+            style="border: 0;
+            border-radius: 6px;"
+            frameborder="0"
+            allowfullscreen="allowfullscreen"></iframe>
+</center>
+<script>
+    const viewer = document.getElementById('viewer')
+
+    const url = new URL(window.location.href);
+    const params = new URLSearchParams(url.search);
+    const fileURL = params.get('file')
+    if (!fileURL) {
+        throw Error('File URL is not valid!')
+    }
+    const viewerURL = `https://docs.google.com/viewer?url=${fileURL}&embedded=true`
+    viewer.src = viewerURL
+</script>
+</body>
+</head>
+</html>
